@@ -1,12 +1,10 @@
 import { databaseExecute } from "../database/database.js";
 
-export const createUser = async (userId, name, surname, bday, mail, password) => {
+export const createUser = async (userId, email, nombre, apellido, telefono, contra) => {
 
-    // console.log(name,surname,bday,mail,password)
+    const registro = "INSERT INTO usuarios (userId, email, nombre, apellido, telefono, contra) VALUES (?, ?, ?, ?, ?, ?);"
 
-    const registro = "INSERT INTO usuarios (userId, name, surname, bday, mail, password) VALUES (?, ?, ?, ?, ?, ?);"
-
-    const results = await databaseExecute(registro, [userId, name, surname, bday, mail, password])
+    const results = await databaseExecute(registro, [userId, email, nombre, apellido, telefono, contra])
 
     return results
 
