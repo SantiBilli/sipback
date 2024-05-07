@@ -6,6 +6,7 @@ export const generateToken = (user) => {
 }
 
 export const validateToken = (req, res, next) => {
+
     const accessToken = req.headers['authorization']
     if (!accessToken) res.status(401).send('Access denied')
 
