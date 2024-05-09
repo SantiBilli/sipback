@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import loginRouter from "./routes/Login.js";
-// import "dotenv/config"
+import "dotenv/config"
 import registerRouter from "./routes/Register.js";
 import checkEmailRouter from "./routes/CheckEmail.js"
 import fileRouter from "./routes/Files.js";
