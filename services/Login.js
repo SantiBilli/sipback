@@ -2,7 +2,7 @@ import { databaseExecute } from "../database/database.js";
 
 export const checkUser = async (mail, password) => {
 
-    const consulta = "SELECT userId, name, surname FROM Usuarios WHERE mail = ? and password = ?"
+    const consulta = "SELECT userId, name, surname FROM users WHERE mail = ? and password = ?"
 
     const results = await databaseExecute(consulta, [mail, password])
     
