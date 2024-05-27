@@ -5,7 +5,9 @@ export const obtainProductCTL = async (req, res) => {
 
     const producto = await obtainProductSVC(postId)
 
-    // console.log(producto);
+    console.log(postId);
+
+    console.log(producto);
 
     if (producto == false) return res.status(204).send("Product Not Found")
 
