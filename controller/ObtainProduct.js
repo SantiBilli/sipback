@@ -7,7 +7,7 @@ export const obtainProductCTL = async (req, res) => {
 
     // console.log(producto);
 
-    if (producto.length == 0) return res.status(204).send("Product Not Find")
+    if (producto == false) return res.status(204).send("Product Not Found")
 
     return res.json({
         producto: producto
