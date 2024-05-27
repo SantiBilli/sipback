@@ -12,3 +12,16 @@ export const obtainProductSVC = async (postId) => {
     
     return results[0];
 }
+
+export const obtainSellerSVC = async (userId) => {
+
+    const consulta = "SELECT * FROM users WHERE userId = ?"
+
+    const results = await databaseExecute(consulta, [userId])
+
+    if (results.length == 0) {
+        return false
+    }
+    
+    return results[0];
+}
