@@ -6,6 +6,7 @@ import registerRouter from "./routes/Register.js";
 import checkEmailRouter from "./routes/CheckEmail.js"
 import fileRouter from "./routes/Files.js";
 import pingRouter from "./routes/Ping.js";
+import obtainProductRouter from "./routes/ObtainProducto.js";
 
 const app = express()
 const PORT = process.env.PORT || 3550
@@ -19,6 +20,7 @@ app.use("/api", registerRouter)
 app.use("/api", checkEmailRouter)
 app.use("/api", fileRouter)
 app.use("/api", pingRouter)
+app.use("/api", obtainProductRouter)
 
 app.listen(PORT, () => {
     console.log(`Server listening on https//localhost:${PORT}`)
