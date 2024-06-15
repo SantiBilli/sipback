@@ -22,6 +22,8 @@ app.use("/api", fileRouter)
 app.use("/api", pingRouter)
 app.use("/api", obtainProductRouter)
 
+app.use("/api/images/", express.static('C:\\Users\\santi\\Desktop\\Grupo 7 Proyecto\\sipback\\uploads'))
+
 app.listen(PORT, () => {
     console.log(`Server listening on https//localhost:${PORT}`)
 })
