@@ -7,7 +7,15 @@ import checkEmailRouter from "./routes/CheckEmail.js"
 import fileRouter from "./routes/Files.js";
 import pingRouter from "./routes/Ping.js";
 import obtainProductRouter from "./routes/ObtainProducto.js";
+import path from "path";
+import { fileURLToPath } from "url";
 
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const uploadsDirectory = path.join(__dirname, 'uploads');
+
+console.log(uploadsDirectory);
 const app = express()
 const PORT = process.env.PORT || 3550
 
@@ -22,7 +30,7 @@ app.use("/api", fileRouter)
 app.use("/api", pingRouter)
 app.use("/api", obtainProductRouter)
 
-app.use("/api/images/", express.static('C:\\Users\\santi\\Desktop\\Grupo 7 Proyecto\\sipback\\uploads'))
+app.use("/api/images/", express.static(uploadsDirectory))
 
 app.listen(PORT, () => {
     console.log(`Server listening on https//localhost:${PORT}`)
