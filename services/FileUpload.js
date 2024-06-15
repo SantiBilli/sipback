@@ -10,7 +10,7 @@ export const createPost = async (postId, userId, nameProd, description, price, i
 }
 
 export const searchPosts = async () => {
-    const posts = "SELECT * FROM publicaciones;"
+    const posts = "SELECT postId, nombreProd, descripcionProd, precio, imagen, email, nombre, apellido, telefono FROM publicaciones INNER JOIN users ON publicaciones.userId = users.userId;"
     
     const results = await databaseExecute(posts, [])
 
