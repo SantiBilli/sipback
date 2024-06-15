@@ -4,8 +4,8 @@ import { v4 } from "uuid"
 export const fileUpload = async (req, res) => {
     const bodyParams = req.body
 
-    console.log(req.file);
-    console.log(bodyParams);
+    // console.log(req.file);
+    // console.log(bodyParams);
 
     if (req.file === undefined || bodyParams.nameProd === '' || bodyParams.description === '' || bodyParams.price === '') return res.status(204).send("Error.") 
 
