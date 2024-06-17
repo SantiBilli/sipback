@@ -10,6 +10,10 @@ import obtainProductRouter from "./routes/ObtainProducto.js";
 import path from "path";
 import { fileURLToPath } from "url";
 import obtainVentasRouter from "./routes/ObtainVentas.js";
+import actualizarEstadoRouter from "./routes/ActualizarEstado.js";
+import actualizarCompradorRouter from "./routes/ActualizarComprador.js";
+import obtainComprasRouter from "./routes/ObtainCompras.js";
+import obtainDatosRouter from "./routes/ObtainDatos.js";
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -31,6 +35,10 @@ app.use("/api", fileRouter)
 app.use("/api", pingRouter)
 app.use("/api", obtainProductRouter)
 app.use("/api",obtainVentasRouter)
+app.use("/api", actualizarEstadoRouter)
+app.use("/api", actualizarCompradorRouter)
+app.use("/api",obtainComprasRouter)
+app.use("/api", obtainDatosRouter)
 
 app.use("/api/images/", express.static(uploadsDirectory))
 

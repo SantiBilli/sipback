@@ -4,9 +4,9 @@ export const createPost = async (postId, userId, nameProd, description, price, i
     
     const fecha = new Date(Date.now());
 
-    const post = "INSERT INTO publicaciones (postId, userId, nombreProd, descripcionProd, precio, imagen, fecha, estado, institucion, zona, materia, ano) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);"
+    const post = "INSERT INTO publicaciones (postId, userId, nombreProd, descripcionProd, precio, imagen, fecha, estado, institucion, zona, materia, ano, comprador) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);"
 
-    const results = await databaseExecute(post, [postId, userId, nameProd, description, price, image, fecha, "publicado", institucion, zona, materia, ano])
+    const results = await databaseExecute(post, [postId, userId, nameProd, description, price, image, fecha, "publicado", institucion, zona, materia, ano, ""])
 
     return results
 
