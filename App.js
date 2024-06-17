@@ -9,6 +9,7 @@ import pingRouter from "./routes/Ping.js";
 import obtainProductRouter from "./routes/ObtainProducto.js";
 import path from "path";
 import { fileURLToPath } from "url";
+import obtainVentasRouter from "./routes/ObtainVentas.js";
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -29,6 +30,7 @@ app.use("/api", checkEmailRouter)
 app.use("/api", fileRouter)
 app.use("/api", pingRouter)
 app.use("/api", obtainProductRouter)
+app.use("/api",obtainVentasRouter)
 
 app.use("/api/images/", express.static(uploadsDirectory))
 
