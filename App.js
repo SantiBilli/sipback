@@ -20,7 +20,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const uploadsDirectory = path.join(__dirname, 'uploads');
 
-console.log(uploadsDirectory);
+// console.log(uploadsDirectory);
 const app = express()
 const PORT = process.env.PORT || 3550
 
