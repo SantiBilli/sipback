@@ -14,6 +14,7 @@ import actualizarEstadoRouter from "./routes/ActualizarEstado.js";
 import actualizarCompradorRouter from "./routes/ActualizarComprador.js";
 import obtainComprasRouter from "./routes/ObtainCompras.js";
 import obtainDatosRouter from "./routes/ObtainDatos.js";
+import soporteRouter from "./routes/Soporte.js";
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -39,6 +40,7 @@ app.use("/api", actualizarEstadoRouter)
 app.use("/api", actualizarCompradorRouter)
 app.use("/api",obtainComprasRouter)
 app.use("/api", obtainDatosRouter)
+app.use("/api", soporteRouter)
 
 app.use("/api/images/", express.static(uploadsDirectory))
 
