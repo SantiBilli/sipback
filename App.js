@@ -15,11 +15,13 @@ import actualizarCompradorRouter from "./routes/ActualizarComprador.js";
 import obtainComprasRouter from "./routes/ObtainCompras.js";
 import obtainDatosRouter from "./routes/ObtainDatos.js";
 import soporteRouter from "./routes/Soporte.js";
+import fotoPerfilRouter from "./routes/FotoPerfil.js";
 
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const uploadsDirectory = path.join(__dirname, 'uploads');
+const pfpDirectory = path.join(__dirname, 'uploadsPFP');
 
 // console.log(uploadsDirectory);
 const app = express()
@@ -41,8 +43,10 @@ app.use("/api", actualizarCompradorRouter)
 app.use("/api",obtainComprasRouter)
 app.use("/api", obtainDatosRouter)
 app.use("/api", soporteRouter)
+app.use("/api",fotoPerfilRouter)
 
 app.use("/api/images/", express.static(uploadsDirectory))
+app.use("/api/pfp/", express.static(pfpDirectory))
 
 app.listen(PORT, () => {
     console.log(`Server listening on https//localhost:${PORT}`)
