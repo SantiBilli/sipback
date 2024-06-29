@@ -1,18 +1,23 @@
 import { generateToken, validateToken } from "../middlewares/Authenticator.js"
-import { checkUser } from "../services/Login.js"
+import { obtenerContra } from "../services/Login.js"
+import bcrypt from "bcrypt"
 
 export const loginUser = async (req, res) => {
     const bodyParams = req.body
 
-    const userExists = await checkUser(bodyParams.mail, bodyParams.password)
+    const contraBD = await obtenerContra(bodyParams.mail)
 
-    if (!userExists) return res.status(401).send("Usuario Incorrecto") //401 Unauthorized
+    if (!contraBD) return res.status(401).send("Invalid Credentials") //401 Unauthorized
 
-    const token = generateToken(userExists)
+    const match = await bcrypt.compare(bodyParams.password, contraBD.contra)
+
+    if (!match) return res.status(401).send("Invalid Credentials")
+
+    const token = generateToken({userId: contraBD.userId})
 
     return res.json({
         token: token, 
-        userData: userExists
+        userData: {userId: contraBD.userId}
     })
 }
 
