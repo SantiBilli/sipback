@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "sip-contenido",
+  "private_key_id": "f0860e5888d011ef2ebd8777b09428acf45cd7f0",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCojV7KitC53Q9f\n5ETgpz1FgmpVp7kpMtsRSsqC8lNJ3qWP57AW3ptH6WPb6Zt7k8drJoDP47w4Z/18\nIRh29PizIZ+bf66crmhwoNuX1iulBHrLW79tddJVeDsZNKZ06fhdtoLEWCltE9iH\nGPtWn2wbfLHIurULXIz3n/u8L5k/qb5wuXdg6aeJojTIY/vvhvggFRLGHQTjLxwL\ndmhUIiwRLUatDa2cMjM7xF4FJFWrE59htE4EnjSaiUPfa5jhV5bJy97RrZwfYQLd\n779WGKOS0pG525EqZpwxAauY2rfn4VXlexjHfNBDfdVbNvuIsyuUf+WFhFZCNzJH\ne0j3qxmxAgMBAAECggEAA9+rYnnoIARpSXu1XEklrKi5lUY/eHecbqhekP29HasP\n+KejTbRAIvoFfzDuT4vS+wbBkj2Odmin7AvV7Ep3IoVK3fPUVVIiEPgWceX0fvR0\nVsMBGlS5ULjsmUjDLFfR+yPiG5131sOcb+bqZFhRv4w5KQcG+QfPjtOawU2B/vM4\nAp2Wzx/I05zCDg08rTZC4eyPx1FUYziFPGpNhvLszKVYwJ5R8wYWvgeA0SLku63X\n4MZ2QlSda4/BqKRH/rPHDW1uYnS+4Hf8P/VS/9EP5KNgO1FluHdusEkxVO2Sdj0v\nOdgbgjxZ6byZgS0EoLKBu1fpq3vtZfL8oBHINJSxAQKBgQDQO0+ye2yfSHXIr69w\nLO+Qo55KTWHIHKpaLolcZQ3MQ0hY5mDrgY1xwoKaBRVYHVGT3kn7FpHEsFQhc3ft\nWZyw9RwccYCEA9zJ+7OMOyufvO6tOWj0A0miDtI+xPpA09WBVNwp3qnXBkkUQCOE\n2vm/oyGBCybcGCPebv15LwG4sQKBgQDPN9QznS8chO7S5O7ZChVHkJ1J0I2m2L3k\n8J/vPcVqNpbmaOUGy/QjNzRtn5atUVJ+0Jik88j7YlUisaXdx3Espn2WcADYt2X5\nQzAbf564hyk6kSVpPaZufbB7u3MyLcKv9t9wXWmUjSl+3jQI5bnxj6186t2mt2D/\n79XBBSexAQKBgBUdzqk05wEIIhml506i3/B1BzpVupLGhWf7zCY4gTuznwSU6EM5\nshRVO1VPKqjy4DD0m+AAm+usTfvOb9z7923ijWU9BWFd2ugIxF52KahbSoD6j3Af\nXTo38o42/4HPeZlR97mvQN3zXznUf0WbxzPt4Rnq/ZfYQtrtunqtj6khAoGBAKVh\naGHdNGltivIUNrBQBNW+DFqKMVOVLlFW3j5hrXpsoRi5ZPh8tJeaiqRnNymSeuWt\nc/ZKfwBq5YmwALI1aBT7t8XmFDbigGdlATMhMrsRXI1apGIPCxKqC71kyLamoPgx\nbvjOBOLDmvefPiZPuoyZYBwPkuFo/+ikMJRBmgEBAoGAXSSz7LAgCtNDNMtuoEWL\nbKfShrFH5r9scGNo9o+VIonPIXyndJMSO763H7riZv+X4UJ6YPWEJTP5ItME/4wj\nH9r0QyVSFBKTdwWkjA0j1jgfOiAsMLdEe9w2bI8EMax8ZTY8aqOs6vvq03YaqFEc\n1RMgJcK0/viWrAz03g4rqQU=\n-----END PRIVATE KEY-----\n",
+  "client_email": "santiserviciosip@sip-contenido.iam.gserviceaccount.com",
+  "client_id": "107061025107067483603",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/santiserviciosip%40sip-contenido.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
