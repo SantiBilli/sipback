@@ -1,5 +1,5 @@
 import { generateToken } from "../middlewares/Authenticator.js"
-import { obtenerContrasenaSVC } from "../services/OlvideContraseña.js"
+import { ObtenerDatosContraSVC, obtenerContrasenaSVC } from "../services/OlvideContraseña.js"
 import nodemailer from 'nodemailer'
 export const OlvideContrasenaCTL = async (req, res) => {    
     const bodyParams = req.body
@@ -44,4 +44,15 @@ export const OlvideContrasenaCTL = async (req, res) => {
         }
     });
 
+}
+
+export const ObtenerDatosContraCTL = async (req, res) => {
+
+    const userId = req.params.id
+
+    const response = await ObtenerDatosContraSVC(userId)
+
+    if (!response) return res.status(204).send("User Not Found")
+
+    return res.json(response)
 }

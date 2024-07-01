@@ -15,3 +15,16 @@ export const obtenerContrasenaSVC = async (email) => {
 
 }
 
+export const ObtenerDatosContraSVC = async (userId) => {
+
+    const consulta = "SELECT email FROM users WHERE userId = ?"
+
+    const results = await databaseExecute(consulta, [userId])
+
+    if (results.length == 0) {
+        return false
+    }
+    
+    return results[0];
+
+}
