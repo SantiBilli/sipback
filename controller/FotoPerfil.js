@@ -1,10 +1,9 @@
-import { createPost, searchPosts } from "../services/FileUpload.js"
-import { v4 } from "uuid"
+import { fotoPerfilResetSVC, fotoPerfilSVC } from "../services/FotoPerfil.js"
 import vision from "@google-cloud/vision"
 import fs from "fs";
 
-export const fileUpload = async (req, res) => {
-    
+export const fotoPerfilCTL = async (req, res) => {
+
     const convertToIndices = (detections, levels) => {
         let result = {};
         
@@ -17,9 +16,9 @@ export const fileUpload = async (req, res) => {
         return result;
       };
 
-    const bodyParams = req.body
+    const jwt = req.jwtData
 
-    if (req.file === undefined || bodyParams.nameProd === '' || bodyParams.description === '' || bodyParams.price === '') return res.status(204).send("Error.") 
+    const imagen = req.file.filename
 
     const client = new vision.ImageAnnotatorClient({
         keyFilename: "credencialesGoogle.json"
@@ -33,26 +32,39 @@ export const fileUpload = async (req, res) => {
     const levels = ['UNKNOWN', 'VERY_UNLIKELY', 'UNLIKELY', 'POSSIBLE', 'LIKELY', 'VERY_LIKELY'];
     const convertedDetections = convertToIndices(detections, levels);
 
-    console.log(req.file.filename, convertedDetections);
+    console.log(imagen, convertedDetections);
 
     if (convertedDetections.adult >= 3 || convertedDetections.racy >= 3) {
         fs.unlinkSync(req.file.path);
         return res.status(406).send("Contenido Prohibido.")
     }
 
-    const image = req.file.filename
-    const postId = v4()
-    const post = await createPost(postId, bodyParams.userId, bodyParams.nameProd, bodyParams.description, bodyParams.price, image, bodyParams.institucion, bodyParams.zona, bodyParams.materia, bodyParams.ano)
+    const post = await fotoPerfilSVC(jwt.userId, imagen)
 
     if (!post) {
         return res.status(204).send("Error.")
     }
-    
-    return res.send()
+
+    if (req.body.imagenVieja != 'null') {
+      fs.unlinkSync(`uploadsPFP/${req.body.imagenVieja}`);
+    }
+
+    return res.json({
+        imagen: imagen
+    })
 }
 
-export const postsList = async (req, res) => {
-    const postsList = await searchPosts()
 
-    return res.json(postsList);
+
+export const fotoPerfilResetCTL = async (req, res) => {
+
+  const bodyParams = req.body
+
+  const actualizarFoto = await fotoPerfilResetSVC(bodyParams.userId)
+
+  if (bodyParams.imagenVieja != 'null') {
+    fs.unlinkSync(`uploadsPFP/${req.body.imagenVieja}`);
+  }
+
+  return res.send()
 }

@@ -1,10 +1,10 @@
 import { databaseExecute } from "../database/database.js";
 
-export const checkUser = async (email, contra) => {
+export const obtenerContra = async (email) => {
 
-    const consulta = "SELECT userId FROM users WHERE email = ? and contra = ?"
+    const consulta = "SELECT contra, userId FROM users WHERE email = ?"
 
-    const results = await databaseExecute(consulta, [email, contra])
+    const results = await databaseExecute(consulta, [email])
 
     if (results.length == 0) {
         return false
