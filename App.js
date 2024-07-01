@@ -14,12 +14,9 @@ import actualizarEstadoRouter from "./routes/ActualizarEstado.js";
 import actualizarCompradorRouter from "./routes/ActualizarComprador.js";
 import obtainComprasRouter from "./routes/ObtainCompras.js";
 import obtainDatosRouter from "./routes/ObtainDatos.js";
-<<<<<<< HEAD
 import olvideContrasenaRouter from "./routes/OlvideContraseña.js";
-=======
 import soporteRouter from "./routes/Soporte.js";
 import fotoPerfilRouter from "./routes/FotoPerfil.js";
->>>>>>> 301be4d1efbf43c82fa59944fb9b60e287c28210
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -46,12 +43,9 @@ app.use("/api", actualizarEstadoRouter)
 app.use("/api", actualizarCompradorRouter)
 app.use("/api",obtainComprasRouter)
 app.use("/api", obtainDatosRouter)
-<<<<<<< HEAD
 app.use("/api", olvideContrasenaRouter)
-=======
 app.use("/api", soporteRouter)
 app.use("/api",fotoPerfilRouter)
->>>>>>> 301be4d1efbf43c82fa59944fb9b60e287c28210
 
 app.use("/api/images/", express.static(uploadsDirectory))
 app.use("/api/pfp/", express.static(pfpDirectory))
