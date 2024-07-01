@@ -35,7 +35,7 @@ export const fileUpload = async (req, res) => {
 
     console.log(convertedDetections);
 
-    if (convertedDetections.adult >= 3 && convertedDetections.racy >= 3) {
+    if (convertedDetections.adult >= 3 || convertedDetections.racy >= 3) {
         fs.unlinkSync(req.file.path);
         return res.status(406).send("Contenido Prohibido.")
     }
