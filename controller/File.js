@@ -33,7 +33,7 @@ export const fileUpload = async (req, res) => {
     const levels = ['UNKNOWN', 'VERY_UNLIKELY', 'UNLIKELY', 'POSSIBLE', 'LIKELY', 'VERY_LIKELY'];
     const convertedDetections = convertToIndices(detections, levels);
 
-    console.log(convertedDetections);
+    console.log(req.file.filename, convertedDetections);
 
     if (convertedDetections.adult >= 3 || convertedDetections.racy >= 3) {
         fs.unlinkSync(req.file.path);
