@@ -8,3 +8,12 @@ export const fotoPerfilSVC = async (userId, imagen) => {
 
     return results
 }
+
+export const fotoPerfilResetSVC = async (userId) => {
+    
+    const consulta = "UPDATE users SET pfp = NULL WHERE userId = ?"
+
+    const results = await databaseExecute(consulta, [userId])
+
+    return results
+}

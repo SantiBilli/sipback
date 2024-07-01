@@ -1,9 +1,9 @@
-import { fotoPerfilSVC } from "../services/FotoPerfil.js"
+import { fotoPerfilResetSVC, fotoPerfilSVC } from "../services/FotoPerfil.js"
 import vision from "@google-cloud/vision"
 import fs from "fs";
 
 export const fotoPerfilCTL = async (req, res) => {
-    
+
     const convertToIndices = (detections, levels) => {
         let result = {};
         
@@ -45,7 +45,26 @@ export const fotoPerfilCTL = async (req, res) => {
         return res.status(204).send("Error.")
     }
 
+    if (req.body.imagenVieja != 'null') {
+      fs.unlinkSync(`uploadsPFP/${req.body.imagenVieja}`);
+    }
+
     return res.json({
         imagen: imagen
     })
+}
+
+
+
+export const fotoPerfilResetCTL = async (req, res) => {
+
+  const bodyParams = req.body
+
+  const actualizarFoto = await fotoPerfilResetSVC(bodyParams.userId)
+
+  if (bodyParams.imagenVieja != 'null') {
+    fs.unlinkSync(`uploadsPFP/${req.body.imagenVieja}`);
+  }
+
+  return res.send()
 }
