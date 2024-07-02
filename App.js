@@ -18,6 +18,7 @@ import olvideContrasenaRouter from "./routes/OlvideContraseña.js";
 import soporteRouter from "./routes/Soporte.js";
 import fotoPerfilRouter from "./routes/FotoPerfil.js";
 import actualizarCredencialesRouter from "./routes/ActualizarCredenciales.js";
+import borrarPublicacionRouter from "./routes/BorrarPublicacion.js";
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -48,6 +49,7 @@ app.use("/api", olvideContrasenaRouter)
 app.use("/api", soporteRouter)
 app.use("/api",fotoPerfilRouter)
 app.use("/api", actualizarCredencialesRouter)
+app.use("/api",borrarPublicacionRouter)
 
 app.use("/api/images/", express.static(uploadsDirectory))
 app.use("/api/pfp/", express.static(pfpDirectory))
