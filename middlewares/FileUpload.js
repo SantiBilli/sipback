@@ -1,7 +1,13 @@
 import multer from "multer";
+import fs from "fs";
 
 export const storage = multer.diskStorage({
     destination: function (req, file, cb) {
+
+      if (!fs.existsSync('uploads/')) {
+        fs.mkdirSync('uploads/', { recursive: true });
+      }
+
       cb(null, 'uploads/')
     },
     filename: function (req, file, cb) {
@@ -13,6 +19,11 @@ export const storage = multer.diskStorage({
   
 export const storage2 = multer.diskStorage({
     destination: function (req, file, cb) {
+
+      if (!fs.existsSync('soporte/')) {
+        fs.mkdirSync('soporte/', { recursive: true });
+      }
+
       cb(null, 'soporte/')
     },
     filename: function (req, file, cb) {
@@ -24,6 +35,11 @@ export const storage2 = multer.diskStorage({
 
   export const storage3 = multer.diskStorage({
     destination: function (req, file, cb) {
+
+      if (!fs.existsSync('uploadsPFP/')) {
+        fs.mkdirSync('uploadsPFP/', { recursive: true });
+      }
+
       cb(null, 'uploadsPFP/')
     },
     filename: function (req, file, cb) {
