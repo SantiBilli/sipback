@@ -5,9 +5,14 @@ export const generateToken = (jwtData) => {
     return jwt.sign(jwtData, process.env.API_KEY, {expiresIn: '2h'})
 }
 
+export const generateMailToken = (jwtData) => {
+    return jwt.sign(jwtData, process.env.API_KEY, {expiresIn: '5m'})
+}
+
 export const validateToken = (req, res, next) => {
 
     const accessToken = req.headers['authorization']
+
     if (!accessToken) res.status(401).send('Access denied')
 
     else {
@@ -22,3 +27,4 @@ export const validateToken = (req, res, next) => {
         })
     }
 }
+
