@@ -34,7 +34,7 @@ export const fotoPerfilCTL = async (req, res) => {
 
     console.log(imagen, convertedDetections);
 
-    if (convertedDetections.adult >= 3 || convertedDetections.racy >= 3 || convertedDetections.spoof >= 2 || convertedDetections.violence >= 3) {
+    if (convertedDetections.adult >= 3 || convertedDetections.racy >= 3 || convertedDetections.violence >= 3) {
         fs.unlinkSync(req.file.path);
         return res.status(406).send("Contenido Prohibido.")
     }
