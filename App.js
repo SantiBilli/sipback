@@ -19,6 +19,7 @@ import soporteRouter from "./routes/Soporte.js";
 import fotoPerfilRouter from "./routes/FotoPerfil.js";
 import actualizarCredencialesRouter from "./routes/ActualizarCredenciales.js";
 import borrarPublicacionRouter from "./routes/BorrarPublicacion.js";
+import actualizarAnoLectivoRouter from "./routes/CambiarAnoLectivo.js";
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -50,6 +51,7 @@ app.use("/api", soporteRouter)
 app.use("/api",fotoPerfilRouter)
 app.use("/api", actualizarCredencialesRouter)
 app.use("/api",borrarPublicacionRouter)
+app.use("/api",actualizarAnoLectivoRouter)
 
 app.use("/api/images/", express.static(uploadsDirectory))
 app.use("/api/pfp/", express.static(pfpDirectory))
