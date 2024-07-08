@@ -4,7 +4,7 @@ export const obtainProductCTL = async (req, res) => {
     
     const bodyParams = req.body
 
-    const producto = await obtainProductSVC(bodyParams.id)
+    const producto = await obtainProductSVC(bodyParams.postId)
 
     if (producto == false) return res.status(204).send("Product Not Found")
 
