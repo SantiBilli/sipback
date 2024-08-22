@@ -12,7 +12,7 @@ export const OlvideContrasenaCTL = async (req, res) => {
 
     const token = generateMailToken({userId: userId})
 
-    const link = `http://localhost:5173/cambiar-contrasena/${token}`;
+    const link = `http://smartswap.com.ar/cambiar-contrasena/${token}`;
     
     var transporter= nodemailer.createTransport({
         service: 'gmail',
